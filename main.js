@@ -74,3 +74,25 @@ const swiper = new Swiper(".swiper", {
   spaceBetween: 20,
   loop: true,
 });
+
+// Subscribe form handler - redirect to WhatsApp with email
+const subscribeForm = document.getElementById("subscribe-form");
+const subscribeEmail = document.getElementById("subscribe-email");
+
+subscribeForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const email = subscribeEmail.value.trim();
+  
+  if (email) {
+    // Encode the message with the email
+    const message = `Hello Traventurous! I would like to subscribe to your newsletter. My email is: ${email}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/966570915844?text=${encodedMessage}`;
+    
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, "_blank");
+    
+    // Clear the form
+    subscribeEmail.value = "";
+  }
+});
