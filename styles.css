@@ -38,20 +38,26 @@
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem;
   outline: none;
   border: none;
   font-size: 1rem;
   white-space: nowrap;
   color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 5rem;
+  background-color: var(--primary-color-dark);
+  border-radius: 2rem !important;
   transition: 0.3s;
   cursor: pointer;
 }
-
-.btn:hover {
+.full_round {
+  border-radius: 100%;
+  background-color: var(--primary-color);
+}
+.full_round:hover {
   background-color: var(--primary-color-dark);
+}
+.btn:hover {
+  background-color: var(--primary-color);
 }
 
 .logo {
